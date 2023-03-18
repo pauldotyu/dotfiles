@@ -103,3 +103,7 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 
 eval "$(github-copilot-cli alias -- "$0")"
+
+alias k=kubectl
+complete -o default -F __start_kubectl k
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
